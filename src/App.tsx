@@ -1,20 +1,20 @@
 import React from "react";
 import Header from "@/components/layout/Header";
+import FocusRoom1 from "@/components/room/FocusRoom1";
 
 const App: React.FC = () => {
   return (
-    // 전체 배경 및 최소 높이 설정
     <div className="min-h-screen bg-base-200 flex flex-col text-base-content">
       {/* 1. 상단 헤더 컴포넌트 적용 */}
       <Header />
 
       {/* 2. 메인 컨텐츠 영역 (구역별 Grid 배치) */}
       <main className="flex-1 p-6 grid grid-cols-12 gap-6">
-        {/* 좌측: 집중실 1~4 구역 (8칸 차지) */}
         <section className="col-span-12 xl:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="card bg-base-100 shadow-md border border-base-300 p-4 min-h-75">
-            <h2 className="text-xl font-bold mb-4 border-b pb-2">집중실 1</h2>
-            {/* 좌석 뱃지들이 들어갈 공간 */}
+          {/* 집중실 1 (타이틀 하단 배치 및 별도 컨테이너화) */}
+          <div className="flex flex-col items-center">
+            <FocusRoom1 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 1</h2>
           </div>
           <div className="card bg-base-100 shadow-md border border-base-300 p-4 min-h-75">
             <h2 className="text-xl font-bold mb-4 border-b pb-2">집중실 2</h2>
