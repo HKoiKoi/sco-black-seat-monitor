@@ -1,18 +1,12 @@
 import React from "react";
+import Header from "@/components/layout/Header";
 
 const App: React.FC = () => {
   return (
     // 전체 배경 및 최소 높이 설정
     <div className="min-h-screen bg-base-200 flex flex-col text-base-content">
-      {/* 1. 상단 헤더 영역 (시간 및 타이틀) */}
-      <header className="sticky top-0 z-50 flex items-center justify-between p-4 bg-base-100 shadow-sm">
-        <h1 className="text-2xl font-bold">SCO 블랙관 스마트 좌석 모니터링</h1>
-        <div className="flex gap-4 items-center">
-          {/* TODO: 1분 주기 타이머 컴포넌트 연결 */}
-          <span className="text-lg font-medium">2026-08-25 18:19</span>
-          <button className="btn btn-sm btn-outline">맨 위로</button>
-        </div>
-      </header>
+      {/* 1. 상단 헤더 컴포넌트 적용 */}
+      <Header />
 
       {/* 2. 메인 컨텐츠 영역 (구역별 Grid 배치) */}
       <main className="flex-1 p-6 grid grid-cols-12 gap-6">
