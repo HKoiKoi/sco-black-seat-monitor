@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "@/components/layout/Header";
 import FocusRoom1 from "@/components/room/FocusRoom1";
+import FocusRoom2 from "@/components/room/FocusRoom2";
+import FocusRoom3 from "@/components/room/FocusRoom3";
 
 const App: React.FC = () => {
   return (
@@ -11,17 +13,24 @@ const App: React.FC = () => {
       {/* 2. 메인 컨텐츠 영역 (구역별 Grid 배치) */}
       <main className="flex-1 p-6 grid grid-cols-12 gap-6">
         <section className="col-span-12 xl:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* 집중실 1 (타이틀 하단 배치 및 별도 컨테이너화) */}
+          {/* 집중실 1 */}
           <div className="flex flex-col items-center">
             <FocusRoom1 />
             <h2 className="text-xl font-bold mt-4 text-info">집중실 1</h2>
           </div>
-          <div className="card bg-base-100 shadow-md border border-base-300 p-4 min-h-75">
-            <h2 className="text-xl font-bold mb-4 border-b pb-2">집중실 2</h2>
+
+          {/* 집중실 2 적용 */}
+          <div className="flex flex-col items-center">
+            <FocusRoom2 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 2</h2>
           </div>
-          <div className="card bg-base-100 shadow-md border border-base-300 p-4 min-h-75">
-            <h2 className="text-xl font-bold mb-4 border-b pb-2">집중실 3</h2>
+
+          {/* 집중실 3 적용 */}
+          <div className="flex flex-col items-center">
+            <FocusRoom3 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 3</h2>
           </div>
+
           <div className="card bg-base-100 shadow-md border border-base-300 p-4 min-h-75">
             <h2 className="text-xl font-bold mb-4 border-b pb-2">집중실 4</h2>
           </div>
