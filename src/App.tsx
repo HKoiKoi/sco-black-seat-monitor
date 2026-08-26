@@ -3,11 +3,12 @@ import Header from "@/components/layout/Header";
 import FocusRoom1 from "@/components/room/FocusRoom1";
 import FocusRoom2 from "@/components/room/FocusRoom2";
 import FocusRoom3 from "@/components/room/FocusRoom3";
+import FocusRoom4 from "@/components/room/FocusRoom4";
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-base-200 flex flex-col text-base-content">
-      {/* 1. 상단 헤더 컴포넌트 적용 */}
+      {/* 1. 상단 헤더 */}
       <Header />
 
       {/* 2. 메인 컨텐츠 영역 */}
@@ -33,45 +34,22 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* 중단: 집중실 4 및 우측 부대시설 레이아웃 조정 */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full max-w-350 mx-auto">
-          {/* 집중실 4 */}
-          <div className="lg:col-span-4 card bg-base-100 shadow-md border border-base-300 p-4 min-h-75">
-            <h2 className="text-xl font-bold mb-4 border-b pb-2 text-center">
-              집중실 4
-            </h2>
-          </div>
-
-          {/* 관리 및 부대시설 구역 */}
-          <div className="lg:col-span-8 flex flex-col sm:flex-row gap-6">
-            <div className="card bg-base-100 shadow-md border border-base-300 p-4 flex-1">
-              <h2 className="text-xl font-bold mb-4 border-b pb-2">
-                코칭/상담실
-              </h2>
-            </div>
-            <div className="card bg-base-100 shadow-md border border-base-300 p-4 flex-1 min-h-37.5">
-              <h2 className="text-lg font-bold mb-2">OA 사물함</h2>
-            </div>
-            <div className="card bg-base-100 shadow-md border border-base-300 p-4 flex-1">
-              <h2 className="text-xl font-bold mb-4 border-b pb-2">
-                학습운영실
-              </h2>
-            </div>
-          </div>
-        </section>
-
-        {/* 하단: 자유 및 식사 구역 */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-350 mx-auto">
-          <div className="card bg-base-100 shadow-md border border-base-300 p-4 min-h-50">
-            <h2 className="text-xl font-bold mb-4 border-b pb-2">다이닝룸</h2>
-          </div>
-          <div className="card bg-base-100 shadow-md border border-base-300 p-4 min-h-50">
-            <h2 className="text-xl font-bold mb-4 border-b pb-2">집중존</h2>
-          </div>
-          <div className="card bg-base-100 shadow-md p-4 min-h-50 border-primary border-2">
-            <h2 className="text-xl font-bold mb-4 border-b pb-2 text-primary">
+        {/* 하단: 라운지존, 집중실 4 */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-screen-3xl mx-auto items-stretch mt-4">
+          {/* 라운지존 */}
+          <div className="card bg-base-100 shadow-md border-2 border-primary p-6 min-h-75 flex flex-col">
+            <h2 className="text-xl font-bold mb-4 border-b-2 border-base-200 pb-2 text-primary">
               라운지존 (Drop 대상)
             </h2>
+            <div className="flex-1 flex items-center justify-center text-base-content/50 border-2 border-dashed border-base-300 rounded-lg">
+              학생을 이곳으로 드래그하여 이동하세요
+            </div>
+          </div>
+
+          {/* 집중실 4 */}
+          <div className="flex flex-col items-center w-full h-full">
+            <FocusRoom4 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 4</h2>
           </div>
         </section>
       </main>
