@@ -4,6 +4,7 @@ import FocusRoom1 from "@/components/room/FocusRoom1";
 import FocusRoom2 from "@/components/room/FocusRoom2";
 import FocusRoom3 from "@/components/room/FocusRoom3";
 import FocusRoom4 from "@/components/room/FocusRoom4";
+import LoungeZone from "./components/room/LoungeZone";
 
 const App: React.FC = () => {
   return (
@@ -37,13 +38,9 @@ const App: React.FC = () => {
         {/* 하단: 라운지존, 집중실 4 */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-screen-3xl mx-auto items-stretch mt-4">
           {/* 라운지존 */}
-          <div className="card bg-base-100 shadow-md border-2 border-primary p-6 min-h-75 flex flex-col">
-            <h2 className="text-xl font-bold mb-4 border-b-2 border-base-200 pb-2 text-primary">
-              라운지존 (Drop 대상)
-            </h2>
-            <div className="flex-1 flex items-center justify-center text-base-content/50 border-2 border-dashed border-base-300 rounded-lg">
-              학생을 이곳으로 드래그하여 이동하세요
-            </div>
+          <div className="flex flex-col items-center w-full h-full">
+            <LoungeZone />
+            <h2 className="text-xl font-bold mt-4 text-info">라운지존</h2>
           </div>
 
           {/* 집중실 4 */}
