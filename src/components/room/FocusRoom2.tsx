@@ -22,7 +22,7 @@ const FocusRoom2: React.FC = () => {
         <div className="flex flex-col justify-between h-full py-4">
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 lg:gap-4">
-              <div className="flex items-center justify-center bg-gray-300 font-bold cursor-not-allowed w-17 h-13 md:h-15 md:w-21 2xl:w-25 2xl:h-17 text-lg 2xl:text-xl border-2">
+              <div className="flex items-center justify-center bg-gray-300 font-bold cursor-not-allowed w-13 h-13 md:h-17 md:w-21 2xl:w-25 2xl:h-19 text-lg 2xl:text-xl border-2">
                 X
               </div>
               <Seat id={35} layout="top" status="occupied" />

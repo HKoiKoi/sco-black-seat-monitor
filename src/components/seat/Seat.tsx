@@ -26,13 +26,12 @@ const Seat: React.FC<SeatProps> = ({
 
   // 1. 번호 박스
   const numBoxCenter =
-    "flex items-center justify-center bg-gray-200 text-black font-bold w-16 h-7 sm:w-20 sm:h-8 2xl:w-24 2xl:h-9 text-xs sm:text-sm";
+    "flex items-center justify-center bg-gray-200 text-black font-bold w-12 h-6 text-[10px] sm:w-20 sm:h-8 sm:text-sm 2xl:w-24 2xl:h-9";
   const numBoxSide =
-    "flex items-center justify-center bg-gray-200 text-black font-bold w-16 h-7 sm:w-20 sm:h-8 2xl:w-14 2xl:h-12 text-xs sm:text-sm";
-
+    "flex items-center justify-center bg-gray-200 text-black font-bold w-12 h-6 text-[10px] sm:w-20 sm:h-8 sm:text-sm 2xl:w-14 2xl:h-12";
   // 2. 이름 박스
-  const nameBoxCenter = `flex items-center justify-center font-bold text-black ${badgeColor} w-16 h-7 sm:w-20 sm:h-8 2xl:w-24 2xl:h-9 text-xs sm:text-sm`;
-  const nameBoxSide = `flex items-center justify-center font-bold text-black ${badgeColor} w-16 h-7 sm:w-20 sm:h-8 2xl:w-24 2xl:h-12 text-xs sm:text-sm`;
+  const nameBoxCenter = `flex items-center justify-center font-bold text-black ${badgeColor} w-12 h-6 text-[10px] sm:w-20 sm:h-8 sm:text-sm 2xl:w-24 2xl:h-9`;
+  const nameBoxSide = `flex items-center justify-center font-bold text-black ${badgeColor} w-12 h-6 text-[10px] sm:w-20 sm:h-8 sm:text-sm 2xl:w-24 2xl:h-12`;
 
   const numBoxClass = isCenter ? numBoxCenter : numBoxSide;
   const nameBoxClass = isCenter ? nameBoxCenter : nameBoxSide;
