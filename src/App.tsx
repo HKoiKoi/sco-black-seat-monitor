@@ -1,56 +1,55 @@
 import React from "react";
-import { swalUtils } from "@/utils/swalUtils";
+import Header from "@/components/layout/Header";
+import FocusRoom1 from "@/components/room/FocusRoom1";
+import FocusRoom2 from "@/components/room/FocusRoom2";
+import FocusRoom3 from "@/components/room/FocusRoom3";
+import FocusRoom4 from "@/components/room/FocusRoom4";
+import LoungeZone from "@/components/room/LoungeZone";
 
 const App: React.FC = () => {
-  // 1. 토스트 알림 테스트 핸들러
-  const handleToast = () => {
-    swalUtils.toast("환영합니다! 시스템이 정상적으로 로드되었습니다.");
-  };
-
-  // 2. 일반 에러 알럿 테스트 핸들러
-  const handleAlert = () => {
-    swalUtils.alert(
-      "DB 연동 실패",
-      "ADT 캡스 출입 기록(.mdb) 파일을 찾을 수 없습니다.",
-      "error",
-    );
-  };
-
-  // 3. Confirm 모달 테스트 핸들러 (좌석 이동 시뮬레이션)
-  const handleConfirm = async () => {
-    const result = await swalUtils.confirm(
-      "좌석 이동",
-      "선택한 학생을 라운지존으로 이동시키겠습니까?",
-    );
-
-    if (result.isConfirmed) {
-      swalUtils.toast("라운지존으로 이동 완료되었습니다.", "success");
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-base-200 flex flex-col items-center justify-center p-8 space-y-10">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-base-content">
-          SCO 블랙관 스마트 좌석 모니터링
-        </h1>
-        <p className="text-lg text-base-content/70">
-          Pretendard 폰트, Tailwind CSS v4, Daisy UI 5 적용 확인용 테스트
-          화면입니다.
-        </p>
-      </div>
+    <div className="min-h-screen bg-base-200 flex flex-col text-base-content">
+      {/* 1. 상단 헤더 */}
+      <Header />
 
-      <div className="flex flex-wrap gap-4 justify-center">
-        <button className="btn btn-primary" onClick={handleToast}>
-          토스트 알림 띄우기
-        </button>
-        <button className="btn btn-error" onClick={handleAlert}>
-          에러 알럿 띄우기
-        </button>
-        <button className="btn btn-warning" onClick={handleConfirm}>
-          좌석 이동 확인 모달 띄우기
-        </button>
-      </div>
+      {/* 2. 메인 컨텐츠 영역 */}
+      <main className="flex-1 p-6 flex flex-col gap-8">
+        {/* 상단: 집중실 1, 2, 3 */}
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-screen-3xl mx-auto items-stretch">
+          {/* 집중실 1 */}
+          <div className="flex flex-col items-center w-full h-full min-w-0">
+            <FocusRoom1 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 1</h2>
+          </div>
+
+          {/* 집중실 2 */}
+          <div className="flex flex-col items-center w-full h-full min-w-0">
+            <FocusRoom2 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 2</h2>
+          </div>
+
+          {/* 집중실 3 */}
+          <div className="flex flex-col items-center w-full h-full min-w-0">
+            <FocusRoom3 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 3</h2>
+          </div>
+        </section>
+
+        {/* 하단: 라운지존, 집중실 4 */}
+        <section className="grid grid-cols-1 xl:grid-cols-2 gap-8 w-full max-w-screen-3xl mx-auto items-stretch mt-4">
+          {/* 라운지존 */}
+          <div className="flex flex-col items-center w-full h-full min-w-0">
+            <LoungeZone />
+            <h2 className="text-xl font-bold mt-4 text-info">라운지존</h2>
+          </div>
+
+          {/* 집중실 4 */}
+          <div className="flex flex-col items-center w-full h-full min-w-0">
+            <FocusRoom4 />
+            <h2 className="text-xl font-bold mt-4 text-info">집중실 4</h2>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
